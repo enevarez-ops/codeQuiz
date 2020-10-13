@@ -32,10 +32,10 @@ var questions = [
     }
  ];
 
- //variable for timer on questions
+//variable for timer on questions
 var time = questions.length * 15;
 
-//Created DOM variables, start button, questions, timer 
+//Created DOM variables, start button, questions, timer, choices, feedback, and score
 var startButton = document.getElementById("startBut")
 
 var questionEl = document.getElementById("questionEl")
@@ -49,6 +49,8 @@ var timerEl = document.getElementById("timer")
 var initialsEL = document.getElementById("initials")
 
 var scoreDisplayEL = document.getElementById("scoreDisplay")
+
+var submitEl = document.getElementById("submit")
 
 //Variable for timer display and countdown
 var timerDisplay; //tie it to its own thing, adding set interval to this
