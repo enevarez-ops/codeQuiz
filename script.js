@@ -1,4 +1,5 @@
-let questE1 = [
+//Questions asked for Code Quiz.
+var questions = [
     {
    question: "Inside which HTML element do we put the JavaScript?",
    choices: ["<script>". "<scripting>", "<java>", "<javascript>"],
@@ -29,4 +30,55 @@ let questE1 = [
         choices: ["//comment", ":comment", "<!--comment-->",],
         answer: "//comment"
     }
- ]
+ ];
+
+ //variable for timer on questions
+var time = questions.length * 15;
+
+//Created DOM variables, start button, questions, timer 
+var startButton = document.getElementById("startBut")
+
+var questionEl = document.getElementById("questionEl")
+
+var choicesEl = document.getElementById("options")
+
+var timerEl = document.getElementById("timer")
+
+var initialsEL = document.getElementById("initials")
+
+var scoreDisplayEL = document.getElementById("scoreDisplay")
+
+//Variable for timer display and countdown
+var timerDisplay; //tie it to its own thing, adding set interval to this
+
+
+ //event listener for start button
+ function startGame() {
+//starting game and initiate timing and score keeping, hide the beginning of the quiz, show the question element, start the interval
+ };
+
+ //function for displaying questions and choices
+ function displayQuestions() {
+//loop through the questions array and display questions and the choices, create a button for all the choices dynamically and add a value of the choice to that button
+ };
+
+//function to check if answers are correct
+
+function checkAnswers() {
+//compare the values of the choice clicked on and compare to answer of the array to check if right or wrong, if wrong points will be deducted from time
+};
+
+//function to end quiz
+function endQuiz() {
+//clear the interval, hide the questions element, show the saved score element 
+}
+
+//function for saving scores
+function savedScore() {
+//save time left and initials as the high score, create object and save it to array in local storage   
+};
+
+//function to print scores on the page
+function getScores() {
+//take array from local storage and display it with a loop on page     
+};
