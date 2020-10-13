@@ -42,6 +42,8 @@ var questionEl = document.getElementById("questionEl")
 
 var choicesEl = document.getElementById("options")
 
+var feedBackEl = document.getElementById("feedBack")
+
 var timerEl = document.getElementById("timer")
 
 var initialsEL = document.getElementById("initials")
