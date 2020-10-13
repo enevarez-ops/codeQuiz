@@ -57,6 +57,8 @@ var scoreDisplayEL = document.getElementById("scoreDisplay");
 
 var submitEl = document.getElementById("submit");
 
+var currentIndex = 0;
+
 //Variable for timer display and countdown
 var timerDisplay; //tie it to its own thing, adding set interval to this
 
