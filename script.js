@@ -1,88 +1,107 @@
 //Questions asked for Code Quiz.
 var questions = [
-    {
-   question: "Inside which HTML element do we put the JavaScript?",
-   choices: ["<script>". "<scripting>", "<java>", "<javascript>"],
-   answer: "<script>"
-    },
-    { 
+  {
+    question: "Inside which HTML element do we put the JavaScript?",
+    choices: ["<script>", "<scripting>", "<java>", "<javascript>"],
+    answer: "<script>",
+  },
+  {
     question: "Where is the correct place to insert a JavaScript?",
     choices: ["<head>", "<body>", "both"],
-    answer: "both"
-    },
-    {
-        question: "The external JavaScript file must contain the <script> tag.",
-        choices: ["False", "True"],
-        answer: "False"
-    },
-    {
-        question: "How do you create a function in JavaScript?",
-        choices: ["function = exFunction()", "function exFunction()", "function {exFunction}", "function:exFunction()"],
-        answer: "function exfunction()"
-    },
-    {
-        question: "How do you call a function named exFunction?",
-        choices: ["exFunction()", "run exFunction", "call exFunction()",],
-        answer: "exFunction()"
-    },
-    {
-        question: "How can you add a comment in a JavaScript?",
-        choices: ["//comment", ":comment", "<!--comment-->",],
-        answer: "//comment"
-    }
- ];
+    answer: "both",
+  },
+  {
+    question: "The external JavaScript file must contain the <script> tag.",
+    choices: ["False", "True"],
+    answer: "False",
+  },
+  {
+    question: "How do you create a function in JavaScript?",
+    choices: [
+      "function = exFunction()",
+      "function exFunction()",
+      "function {exFunction}",
+      "function:exFunction()",
+    ],
+    answer: "function exfunction()",
+  },
+  {
+    question: "How do you call a function named exFunction?",
+    choices: ["exFunction()", "run exFunction", "call exFunction()"],
+    answer: "exFunction()",
+  },
+  {
+    question: "How can you add a comment in a JavaScript?",
+    choices: ["//comment", ":comment", "<!--comment-->"],
+    answer: "//comment",
+  },
+];
 
 //variable for timer on questions
 var time = questions.length * 15;
 
 //Created DOM variables, start button, questions, timer, choices, feedback, and score
-var startButton = document.getElementById("startBut")
+var startButton = document.getElementById("startBut");
 
-var questionEl = document.getElementById("questionEl")
+var questionEl = document.getElementById("questionEl");
 
-var choicesEl = document.getElementById("options")
+var choicesEl = document.getElementById("options");
 
-var feedBackEl = document.getElementById("feedBack")
+var feedBackEl = document.getElementById("feedBack");
 
-var timerEl = document.getElementById("timer")
+var timerEl = document.getElementById("timer");
 
-var initialsEL = document.getElementById("initials")
+var initialsEL = document.getElementById("initials");
 
-var scoreDisplayEL = document.getElementById("scoreDisplay")
+var scoreDisplayEL = document.getElementById("scoreDisplay");
 
-var submitEl = document.getElementById("submit")
+var submitEl = document.getElementById("submit");
 
 //Variable for timer display and countdown
 var timerDisplay; //tie it to its own thing, adding set interval to this
 
+//event listener for start button starting game and initiate timing and score keeping, hide the beginning of the quiz, show the question element, start the interval
+function startGame() {
+  var startQuizEl = document.getElementById("startQuiz");
+  startQuizEl.setAttribute("class", "hidden");
+  questionEl.removeAttribute("class");
+  timerDisplay = setInterval(function () {
+    time--;
 
- //event listener for start button
- function startGame() {
-//starting game and initiate timing and score keeping, hide the beginning of the quiz, show the question element, start the interval
- };
+    timerEl.textContent = time;
 
- //function for displaying questions and choices
- function displayQuestions() {
-//loop through the questions array and display questions and the choices, create a button for all the choices dynamically and add a value of the choice to that button
- };
+    if (time <= 0) {
+      endQuiz();
+    }
+  }, 1000);
+  displayQuestions();
+}
+
+//function for displaying questions and choices
+function displayQuestions() {
+  //loop through the questions array and display questions and the choices, create a button for all the choices dynamically and add a value of the choice to that button
+  console.log("HERE WO GO");
+}
 
 //function to check if answers are correct
 
 function checkAnswers() {
-//compare the values of the choice clicked on and compare to answer of the array to check if right or wrong, if wrong points will be deducted from time
-};
+  //compare the values of the choice clicked on and compare to answer of the array to check if right or wrong, if wrong points will be deducted from time
+}
 
 //function to end quiz
 function endQuiz() {
-//clear the interval, hide the questions element, show the saved score element 
+  //clear the interval, hide the questions element, show the saved score element
 }
 
 //function for saving scores
 function savedScore() {
-//save time left and initials as the high score, create object and save it to array in local storage   
-};
+  //save time left and initials as the high score, create object and save it to array in local storage
+}
 
 //function to print scores on the page
 function getScores() {
-//take array from local storage and display it with a loop on page     
-};
+  //take array from local storage and display it with a loop on page
+}
+
+startButton.onclick = startGame;
