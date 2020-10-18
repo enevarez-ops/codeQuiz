@@ -1,5 +1,5 @@
 //Questions asked for Code Quiz.
-var questions = [
+var questions = [ 
   {
     question: "Inside which HTML element do we put the JavaScript?",
     choices: ["<script>", "<scripting>", "<java>", "<javascript>"],
@@ -82,28 +82,49 @@ function startGame() {
 //function for displaying questions and choices
 function displayQuestions() {
   //loop through the questions array and display questions and the choices, create a button for all the choices dynamically and add a value of the choice to that button
-  console.log("HERE WO GO");
+//Variable for current question index  
+var currentQuestion = questions[currentIndex];
+//Displays question using dot notation
+document.getElementById("questionDisplay").textContent = currentQuestion.question;
+//Clearing HTML
+choicesEl.innerHTML = "";
+
+for (var i = 0; i < currentQuestion.choices.length; i++){
+  //Variables and elements for button choices
+  var buttonChoices = document.createElement("button");
+  buttonChoices.setAttribute("class", "choiceEl");
+  buttonChoices.setAttribute("value", currentQuestion.choices[i]);
+  buttonChoices.textContent = currentQuestion.choices[i];
+  buttonChoices.onclick = checkAnswers;
+  choicesEl.appendChild(buttonChoices);
+}
+
 }
 
 //function to check if answers are correct
-
 function checkAnswers() {
   //compare the values of the choice clicked on and compare to answer of the array to check if right or wrong, if wrong points will be deducted from time
+for (var i = 0; i < checkAnswers.length; i++) {
+
+}
 }
 
 //function to end quiz
 function endQuiz() {
   //clear the interval, hide the questions element, show the saved score element
+
 }
 
 //function for saving scores
 function savedScore() {
   //save time left and initials as the high score, create object and save it to array in local storage
+
 }
 
 //function to print scores on the page
 function getScores() {
   //take array from local storage and display it with a loop on page
+
 }
 
 startButton.onclick = startGame;
