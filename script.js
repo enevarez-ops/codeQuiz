@@ -97,17 +97,34 @@ for (var i = 0; i < currentQuestion.choices.length; i++){
   buttonChoices.textContent = currentQuestion.choices[i];
   buttonChoices.onclick = checkAnswers;
   choicesEl.appendChild(buttonChoices);
-}
-
-}
+};
+};
 
 //function to check if answers are correct
 function checkAnswers() {
   //compare the values of the choice clicked on and compare to answer of the array to check if right or wrong, if wrong points will be deducted from time
-for (var i = 0; i < checkAnswers.length; i++) {
-
-}
-}
+  //time variable for answers
+if (this.value !== questions[currentIndex].answer){
+  time-= 15;
+  if (time < 0){
+    time = 0
+  };
+  timerEl.textContent = time;
+  feedBackEl.textContent = "WRONG!!"
+} else {
+  feedBackEl.textContent = "RIGHT AGAIN THERE BUCKOOOO!!"
+};
+feedBackEl.removeAttribute("class");
+setTimeout( function(){
+  feedBackEl.setAttribute("class", "hidden");
+}, 1000);
+currentIndex++;
+if (currentIndex === questions.length){
+  endQuiz();
+} else {
+  displayQuestions();
+};
+};
 
 //function to end quiz
 function endQuiz() {
