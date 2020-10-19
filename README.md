@@ -24,19 +24,19 @@ SO THAT I can gauge my progress compared to my peers
 
 ## Description
 
-Description of Website and what technologies were used
+AS A coding boot camp student this website will be used to study and keep up with coding.
 
 ## Installation
 
-How to install and run app/website
+Run app on default Browser.
 
 ## Contributors
 
-who participating in building this project
+Efrain Nevarez
 
 ## Credits
 
-Credits for anything used to build site
+CCS, HTML, JavaScript
 
 ## License
 
