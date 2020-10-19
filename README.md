@@ -13,7 +13,7 @@
 
 ## Deployed site
 
-[Title of Site](Site-Link)
+[Code Quiz](Shttps://enevarez-ops.github.io/codeQuiz/)
 ![gif for site](gif-link)
 
 ## User Story
