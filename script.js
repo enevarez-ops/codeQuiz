@@ -110,11 +110,14 @@ if (this.value !== questions[currentIndex].answer){
     time = 0
   };
   timerEl.textContent = time;
+  //Display messages for answers right and wrong
   feedBackEl.textContent = "WRONG!!"
 } else {
   feedBackEl.textContent = "RIGHT AGAIN THERE BUCKOOOO!!"
 };
+//removing hidden class for feedback element 
 feedBackEl.removeAttribute("class");
+//timer function for clock and display of questions
 setTimeout( function(){
   feedBackEl.setAttribute("class", "hidden");
 }, 1000);
@@ -129,7 +132,14 @@ if (currentIndex === questions.length){
 //function to end quiz
 function endQuiz() {
   //clear the interval, hide the questions element, show the saved score element
-
+clearInterval(timerDisplay);
+//Variable for end quiz
+var endQuizEl = document.getElementById("finDisplay");
+//showing end quiz elements and removing class of hidden
+endQuizEl.removeAttribute("class");
+document.getElementById("finScore").textContent = time;
+//hiding questions after final question is asked
+questionEl.setAttribute("class", "hidden");
 }
 
 //function for saving scores
