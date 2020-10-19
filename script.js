@@ -59,6 +59,7 @@ var submitEl = document.getElementById("submit");
 
 var currentIndex = 0;
 
+
 //Variable for timer display and countdown
 var timerDisplay; //tie it to its own thing, adding set interval to this
 
@@ -148,8 +149,10 @@ function savedScore() {
 //variable statement for initials 
 var initialsSaved = initialsEL.value.trim();
 //if statement to save initials in local storage
+
 if (initialsSaved !== "") {
-  var savedHighScore = JSON.parse(localStorage.getItem("savedHighScores")) || []
+  var savedHighScore = JSON.parse(localStorage.getItem("savedHighScore")) || [];
+
   //variable for high score and saved initials with time
   var newHighScore = {
     score: time, 
@@ -157,16 +160,27 @@ if (initialsSaved !== "") {
   }
   //saving high score to an array in local storage
   savedHighScore.push(newHighScore);
+  console.log(savedHighScore)
   localStorage.setItem("savedHighScore", JSON.stringify(savedHighScore));
+};
+
+
+
+scoreDisplayEL.removeAttribute("class");
+savedHighScore.sort( function(a, b){
+  return b.score-a.score
+})
+console.log(savedHighScore)
+//for loop to display saved high score and initials
+for (var i = 0; i < savedHighScore.length; i++){
+  var listEl = document.createElement("li");
+  listEl.textContent = savedHighScore[i].initials + ": " + savedHighScore[i].score;
+  //appending list to OL element in HTML
+  document.getElementById("scores").appendChild(listEl);
+}
 }
 
 
-}
 
-//function to print scores on the page
-function getScores() {
-  //take array from local storage and display it with a loop on page
-
-}
-
+submitEl.onclick = savedScore;
 startButton.onclick = startGame;
