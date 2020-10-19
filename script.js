@@ -145,6 +145,21 @@ questionEl.setAttribute("class", "hidden");
 //function for saving scores
 function savedScore() {
   //save time left and initials as the high score, create object and save it to array in local storage
+//variable statement for initials 
+var initialsSaved = initialsEL.value.trim();
+//if statement to save initials in local storage
+if (initialsSaved !== "") {
+  var savedHighScore = JSON.parse(localStorage.getItem("savedHighScores")) || []
+  //variable for high score and saved initials with time
+  var newHighScore = {
+    score: time, 
+    initials: initialsSaved,
+  }
+  //saving high score to an array in local storage
+  savedHighScore.push(newHighScore);
+  localStorage.setItem("savedHighScore", JSON.stringify(savedHighScore));
+}
+
 
 }
 
